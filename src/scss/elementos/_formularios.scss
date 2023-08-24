@@ -1,0 +1,34 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+form {
+    fieldset {
+        padding: 0;
+        border: none;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.9rem;
+        @include m.tablet {
+            max-width: 60%;
+        }
+        @include m.desktop {
+            max-width: 40%;
+        }
+    }
+
+
+    .entrada {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        input {
+            background-color: v.$gris-claro;
+            border: none;
+            padding: 1rem;
+        }
+    }
+    .radio {
+
+    }
+}

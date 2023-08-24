@@ -1,0 +1,11 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.galeria {
+
+}
+.galeria-imagenes {
+    display: grid;
+    grid-template-columns: repeat(2 ,1fr);
+    cursor: pointer;
+}

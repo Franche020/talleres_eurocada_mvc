@@ -1,0 +1,30 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+    background-color: v.$blanco;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal;
+    font-size: 1.8rem;
+}
+a {
+    text-decoration: none;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+.contenedor {
+    margin: 0 auto;
+    padding: 2.8rem;
+    border-bottom: 1px solid v.$negro;
+}
+p {
+    color: v.$negro;
+}

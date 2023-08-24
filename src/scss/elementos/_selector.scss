@@ -1,0 +1,31 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.selector {
+    position: relative;
+    width: 90%;
+    max-width: 50rem;
+    margin: 0 auto;
+   
+}
+.selector--picture {
+
+}
+
+.selector--svg {
+    align-items: start;
+    display: flex;
+    width: 100%;
+ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(255, 0, 0, 0.232);
+}
+.selector--pieza {
+    &:hover {
+        fill: darken( v.$azul, 10% );
+        cursor: pointer;
+    }
+}

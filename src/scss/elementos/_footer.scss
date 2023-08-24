@@ -1,0 +1,12 @@
+@use 'base/variables' as v;
+
+footer{
+    background-color: v.$azul;
+    padding: 2.8rem;
+    margin: 0 auto;
+    p {
+        color: v.$blanco;
+        padding: 2rem 0;
+        margin: 0 auto;
+    }
+}

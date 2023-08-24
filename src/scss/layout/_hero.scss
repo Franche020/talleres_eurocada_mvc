@@ -1,0 +1,22 @@
+@use 'base/variables' as v;
+@use 'base/variables' as m;
+
+
+.hero {
+    background-image: url("../img/hero.avif");
+    min-height: 23rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  @supports not (background-image: url("../img/hero.avif")) {
+    .hero {
+      background-image: url("../img/hero.webp"); 
+    }
+  }
+  
+  @supports not (background-image: url("../img/hero.webp")) {
+    .hero {
+      background-image: url("../img/hero.jpg");
+    } 
+  }
