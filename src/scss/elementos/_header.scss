@@ -22,3 +22,92 @@ h1{
 h2 {
     color: v.$blanco;
 }
+
+nav {
+    display: flex;
+    width: auto;
+    justify-content:space-between;
+    flex-direction: row;
+    align-items: center;
+
+    @include m.tablet {
+        grid-column: 1/3;
+       
+    }
+    @include m.desktop {
+        align-items: center;
+    }
+
+
+    ul{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @include m.tablet {
+            flex-direction: row;
+            gap: 0rem;
+        }
+        @include m.desktop {
+            gap: 1rem;
+        }
+    }
+    li{
+        transition-property: background-color;
+        transition-duration: .3s;
+
+        border-radius: 0.2rem;
+        display: flex;
+        justify-content: center;
+        a{
+            color: v.$amarillo;
+            padding: 2.5rem 1rem;
+            @include m.desktop {
+                padding: 2.5rem 2rem;
+            }
+        }
+    }
+    li:hover {
+
+        background-color: darken($color: v.$azul, $amount: 10%);
+    }
+
+
+}
+
+// BURGUER MENU
+
+.navegacion__boton{
+    cursor: pointer;
+    display: flex;
+    margin: 2rem;
+    justify-content: center;
+    @include m.tablet {
+        justify-content: end;
+    }
+    @include m.desktop {
+        display: none;
+    }
+}
+.navegacion__boton--mostrar{
+    display: block;
+    height: 5rem;
+    width: 5rem;
+}
+.navegacion__boton--cerrar{
+    display: none;
+    height: 5rem;
+    width: 5rem;
+}
+.navegacion__enlaces{
+    display: none;
+    @include m.desktop {
+        display: flex;
+    }
+}
+
+.redes{
+    display: flex;
+}

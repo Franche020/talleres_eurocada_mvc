@@ -1,0 +1,16 @@
+.mayus {
+    text-transform: uppercase;
+}
+.small {
+    font-size: 1.4rem;
+}
+.flex-horizontal{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.margin2rem{
+    margin: 2rem;
+}

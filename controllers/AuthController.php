@@ -30,9 +30,12 @@ class AuthController {
                         session_start();    
                         $_SESSION['id'] = $usuario->id;
                         $_SESSION['nombre'] = $usuario->nombre;
-                        $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
-                        $_SESSION['admin'] = $usuario->admin ?? null;
+                        if($usuario->admin === '1') {
+                            $_SESSION['admin'] = $usuario->admin;
+                        }
+
+                        header('location: /administracion');
                         
                     } else {
                         Usuario::setAlerta('error', 'Password Incorrecto');
@@ -51,12 +54,9 @@ class AuthController {
     }
 
     public static function logout() {
-        if($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_start();
             $_SESSION = [];
             header('Location: /');
-        }
-       
     }
 
     public static function registro(Router $router) {
@@ -65,9 +65,11 @@ class AuthController {
 
         if($_SERVER['REQUEST_METHOD'] === 'POST') {
 
+            
             $usuario->sincronizar($_POST);
             
             $alertas = $usuario->validar_cuenta();
+
 
             if(empty($alertas)) {
                 $existeUsuario = Usuario::where('email', $usuario->email);
@@ -79,9 +81,6 @@ class AuthController {
                     // Hashear el password
                     $usuario->hashPassword();
 
-                    // Eliminar password2
-                    unset($usuario->password2);
-
                     // Generar el Token
                     $usuario->crearToken();
 
@@ -89,7 +88,7 @@ class AuthController {
                     $resultado =  $usuario->guardar();
 
                     // Enviar email
-                    $email = new Email($usuario->email, $usuario->nombre, $usuario->token);
+                    $email = new Email($usuario->email, $usuario->nombre,$usuario->token,null,null,null,null);
                     $email->enviarConfirmacion();
                     
 
@@ -129,7 +128,7 @@ class AuthController {
                     $usuario->guardar();
 
                     // Enviar el email
-                    $email = new Email( $usuario->email, $usuario->nombre, $usuario->token );
+                    $email = new Email( $usuario->email, $usuario->nombre, $usuario->token,null,null,null,null );
                     $email->enviarInstrucciones();
 
 
@@ -239,7 +238,7 @@ class AuthController {
      
 
         $router->render('auth/confirmar', [
-            'titulo' => 'Confirma tu cuenta DevWebcamp',
+            'titulo' => 'Confirma tu cuenta Eurocada',
             'alertas' => Usuario::getAlertas()
         ]);
     }

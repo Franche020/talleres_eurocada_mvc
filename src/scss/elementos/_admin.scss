@@ -1,0 +1,20 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.admin-imagenes {
+    div{
+        padding: 0.5rem;
+        border: 1px solid v.$gris;
+    }
+    @include m.tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @include m.desktop {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .boton {
+        width: 100%;
+    }
+}

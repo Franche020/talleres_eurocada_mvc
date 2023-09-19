@@ -1,0 +1,13 @@
+DirectoryIndex index.php
+	 
+RewriteEngine On
+
+# Redireccionar a HTTPS
+RewriteCond %{HTTPS} !on
+RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Otras reglas existentes
+
+RewriteRule ^$ public/index.php [L]
+RewriteRule ^((?!public/).*)$ public/$1 [L,NC]
+

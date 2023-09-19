@@ -4,3 +4,11 @@
 .boton {
     @include m.boton(v.$azul, v.$amarillo);
 }
+.botonera {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    @include m.tablet {
+        flex-direction: row;
+    }
+}

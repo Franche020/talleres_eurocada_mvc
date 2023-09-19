@@ -4,14 +4,12 @@ namespace Model;
 
 class Usuario extends ActiveRecord {
     protected static $tabla = 'usuarios';
-    protected static $columnasDB = ['id', 'nombre', 'apellido', 'email', 'password', 'confirmado', 'token', 'admin'];
+    protected static $columnasDB = ['id', 'nombre', 'email', 'password', 'confirmado', 'token', 'admin'];
 
     public $id;
     public $nombre;
-    public $apellido;
     public $email;
     public $password;
-    public $password2;
     public $confirmado;
     public $token;
     public $admin;
@@ -24,13 +22,11 @@ class Usuario extends ActiveRecord {
     {
         $this->id = $args['id'] ?? null;
         $this->nombre = $args['nombre'] ?? '';
-        $this->apellido = $args['apellido'] ?? '';
         $this->email = $args['email'] ?? '';
         $this->password = $args['password'] ?? '';
-        $this->password2 = $args['password2'] ?? '';
         $this->confirmado = $args['confirmado'] ?? 0;
         $this->token = $args['token'] ?? '';
-        $this->admin = $args['admin'] ?? '';
+        $this->admin = $args['admin'] ?? 0;
     }
 
     // Validar el Login de Usuarios
@@ -53,9 +49,6 @@ class Usuario extends ActiveRecord {
         if(!$this->nombre) {
             self::$alertas['error'][] = 'El Nombre es Obligatorio';
         }
-        if(!$this->apellido) {
-            self::$alertas['error'][] = 'El Apellido es Obligatorio';
-        }
         if(!$this->email) {
             self::$alertas['error'][] = 'El Email es Obligatorio';
         }
@@ -64,9 +57,6 @@ class Usuario extends ActiveRecord {
         }
         if(strlen($this->password) < 6) {
             self::$alertas['error'][] = 'El password debe contener al menos 6 caracteres';
-        }
-        if($this->password !== $this->password2) {
-            self::$alertas['error'][] = 'Los password son diferentes';
         }
         return self::$alertas;
     }

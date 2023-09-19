@@ -1,0 +1,17 @@
+@use 'base/variables' as v;
+
+.alertas {
+    margin: 0 auto;
+    p{
+        padding: 1rem 2rem;
+    }
+}
+.error{
+    background-color: v.$rojo;
+    color: v.$blanco;
+
+}
+.exito{
+    background-color: v.$verde;
+    color: v.$negro;
+}

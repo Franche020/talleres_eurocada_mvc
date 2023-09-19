@@ -9,15 +9,11 @@ form {
         display: flex;
         flex-direction: column;
         gap: 0.9rem;
-        @include m.tablet {
-            max-width: 60%;
-        }
-        @include m.desktop {
-            max-width: 40%;
-        }
+        align-items: start;
+        
     }
-
-
+    
+    
     .entrada {
         display: flex;
         flex-direction: column;
@@ -27,8 +23,117 @@ form {
             border: none;
             padding: 1rem;
         }
+        
     }
-    .radio {
+}
+.partes {
+    form {
+        width: 100%;
+    }
+    
+    @include m.desktop {
+        width: 70rem;
+    }
 
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    align-items: center;
+
+    fieldset {
+        display: flex;
+        align-items: start;
+        width: 100%;
+    }
+    
+    .entrada--checkbox{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        span{
+            font-weight: 700;
+        }
+    }
+    .grid-2{
+        @include m.desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem
+        }
+    
+    }
+    
+}
+.formulario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    max-width: 40rem;
+    border-bottom: none;
+    
+    @include m.desktop {
+        max-width: 70rem;
+    }
+    .grid-2{
+        @include m.desktop {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem
+        }
+    
+    }
+}
+
+.contacto { 
+    fieldset{
+        width: 100%;
+    }
+    max-width: 40rem;
+    
+    
+    @include m.desktop {
+        max-width: 70rem;
+    }
+    .entrada{
+        width: 100%;
+    }
+}
+
+input[type="file"] {
+    display: none;
+}
+.archivo {
+    font-size: 14px;
+    text-transform: none;
+    padding: 0.5rem;
+    width: 100%;
+    background-color: v.$gris-claro;
+    color: v.$azul;
+    svg {
+        fill: v.$azul;
+        stroke: v.$azul;
+    }
+    &:hover {
+        color:v.$amarillo;
+        svg{
+            fill: v.$amarillo;
+            stroke: v.$amarillo;  
+        }
+    }
+}
+
+.submit {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    .boton {
+        
+        width: 100%;
+        max-width: 40rem;
+        @include m.desktop {
+            max-width: 70rem;
+        }
     }
 }

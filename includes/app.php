@@ -13,3 +13,8 @@ require 'database.php';
 
 // Conectarnos a la base de datos
 ActiveRecord::setDB($db);
+
+// Rutas de archivos
+
+define('CARPETA_IMAGENES', __DIR__ . '/../public/fotos/');
+define('CARPETA_THUMBNAILS', __DIR__ . '/../public/fotos/miniaturas/');

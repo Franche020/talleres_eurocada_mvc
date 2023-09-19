@@ -3,13 +3,13 @@
 
 .selector {
     position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 50rem;
     margin: 0 auto;
    
 }
 .selector--picture {
-
+z-index: 0;
 }
 
 .selector--svg {
@@ -18,14 +18,19 @@
     width: 100%;
  
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
-    background-color: rgba(255, 0, 0, 0.232);
 }
 .selector--pieza {
     &:hover {
         fill: darken( v.$azul, 10% );
+        fill-opacity: 30%;
         cursor: pointer;
     }
+}
+.selector--marcada {
+    fill: darken( v.$azul, 20% );
+    fill-opacity: 40%;
 }

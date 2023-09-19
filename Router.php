@@ -20,7 +20,11 @@ class Router
     public function comprobarRutas()
     {
 
-        $url_actual = $_SERVER['PATH_INFO'] ?? '/';
+        if(isset($_SERVER['PATH_INFO'])){
+            $url_actual = $_SERVER['PATH_INFO'] ?? '/';
+        } else {
+            $url_actual =strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        }
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
