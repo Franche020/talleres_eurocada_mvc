@@ -2,9 +2,9 @@
 
 namespace Classes;
 
-use PHPMailer\PHPMailer\PHPMailer;
 
-class Email
+
+class NewEmail
 {
 
     public $email;
@@ -31,94 +31,56 @@ class Email
     public function enviarConfirmacion()
     {
 
-        // create a new object
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER_CUENTAS'];
-        $mail->Password = $_ENV['EMAIL_PASS_CUENTAS'];
-
-        $mail->setFrom('cuentas@tallereseurocada.es', 'Cuentas Talleres Eurocada');
-        $mail->addAddress($this->email, $this->nombre);
-        $mail->Subject = 'Confirma tu Cuenta';
-
-        // Set HTML
-        $mail->isHTML(TRUE);
-        $mail->CharSet = 'UTF-8';
+        // Cabecera
+        $para = `{$this->nombre} , {$this->email}`;
+        $subject = 'Confirma tu Cuenta';
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = `To: {$this->nombre} <{$this->email}>`;
+        $headers[] = 'From: Cuentas Talleres Eurocadar <cuentas@tallereseurocada.es>';
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has Registrado Correctamente tu cuenta en Eurocada; pero es necesario confirmarla</p>";
         $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['HOST'] . "/confirmar-cuenta?token=" . $this->token . "'>Confirmar Cuenta</a>";
         $contenido .= "<p>Si tu no creaste esta cuenta; puedes ignorar el mensaje</p>";
         $contenido .= '</html>';
-        $mail->Body = $contenido;
 
         //Enviar el mail
-        $mail->send();
+        mail($para, $subject, $contenido, $headers);
     }
 
     public function enviarInstrucciones()
     {
 
-        // create a new object
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = 'ssl';
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER_CUENTAS'];
-        $mail->Password = $_ENV['EMAIL_PASS_CUENTAS'];
+        // Cabecera
+        $para = `{$this->nombre} , {$this->email}`;
+        $subject =  'Reestablece tu password';
+        $headers[] = 'MIME-Version: 1.0';
+        $headers[] = 'Content-type: text/html; charset=iso-8859-1';
+        $headers[] = `To: {$this->nombre} <{$this->email}>`;
+        $headers[] = 'From: Cuentas Talleres Eurocadar <cuentas@tallereseurocada.es>';
 
-        $mail->setFrom('cuentas@tallereseurocada.es', 'Cuentas Talleres Eurocada');
-        $mail->addAddress($this->email, $this->nombre);
-        $mail->Subject = 'Reestablece tu password';
-
-        // Set HTML
-        $mail->isHTML(TRUE);
-        $mail->CharSet = 'UTF-8';
 
         $contenido = '<html>';
         $contenido .= "<p><strong>Hola " . $this->nombre .  "</strong> Has solicitado reestablecer tu password, sigue el siguiente enlace para hacerlo.</p>";
         $contenido .= "<p>Presiona aquí: <a href='" . $_ENV['HOST'] . "/reestablecer?token=" . $this->token . "'>Reestablecer Password</a>";
         $contenido .= "<p>Si tu no solicitaste este cambio, puedes ignorar el mensaje</p>";
         $contenido .= '</html>';
-        $mail->Body = $contenido;
+
 
         //Enviar el mail
-        $mail->send();
+        mail($para, $subject, $contenido, $headers);
     }
 
     public function emailContacto()
     {
 
-        // create a new object
-        $mail = new PHPMailer();
-        $mail->isSMTP();
-        $mail->Host = $_ENV['EMAIL_HOST'];
-        $mail->SMTPAuth = true;
-        //$mail->SMTPSecure = 'ssl';
-        $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER_CONTACTO'];
-        $mail->Password = $_ENV['EMAIL_PASS_CONTACTO'];
-
-        $mail->setFrom('contacto@tallereseurocada.es', 'Talleres Eurocada');
-        $mail->addAddress($this->email, $this->nombre);
-        $mail->addBCC('contacto@tallereseurocada.es');
-        $mail->Subject = 'Solicitud de presupuesto de pintura';
-
         // Set HTML
-        $mail->isHTML(true);
-        $mail->CharSet = 'UTF-8';
-
         $stringPiezas = '';
 
         // UL piezas
         if (!empty($this->piezas)) {
-            
+
             $stringPiezas = '<ul>';
             foreach ($this->piezas as $pieza) {
                 $stringPiezas .= '<li>';
@@ -233,12 +195,41 @@ footer p, footer a {
         </html>
         ';
 
-        foreach ($this->imagenes as $imagen) {
-            $mail->addAttachment($imagen);
+        $para = $this->email;
+        $asunto = 'Presupuesto de pintura';
+        
+        $cabeceras = "From: contacto@tallereseurocada.es" . "\r\n";
+        $cabeceras .= "Reply-To: contacto@tallereseurocada.es" . "\r\n";
+        $cabeceras .= "BCC: tallereseurocada@yahoo.es\r\n";
+        $cabeceras .= "MIME-Version: 1.0" . "\r\n";
+        $cabeceras .= "Content-Type: multipart/mixed; boundary=\"limite\"\r\n";
+        
+        // Crear mensaje
+        $mensaje = "--limite\r\n";
+        $mensaje .= "Content-Type: text/html; charset=UTF-8\r\n";
+        $mensaje .= "Content-Transfer-Encoding: 8bit\r\n\r\n";
+        $mensaje .= $contenido . "\r\n\r\n"; 
+        
+        // Adjuntar archivos
+        foreach ($this->imagenes as $img) {
+          $adjunto = chunk_split(base64_encode(file_get_contents($img)));
+          
+          $mensaje .= "--limite\r\n";
+          $mensaje .= "Content-Type: application/octet-stream; name=\"".basename($img)."\"\r\n";
+          $mensaje .= "Content-Transfer-Encoding: base64\r\n";
+          $mensaje .= "Content-Disposition: attachment; filename=\"".basename($img)."\"\r\n";
+          $mensaje .= $adjunto . "\r\n\r\n";
         }
-
-
-        $mail->Body = $contenido;
-        $mail->send();
+        
+        $mensaje .= "--limite--";
+        
+        // Enviar correo
+        $enviado = mail($para, $asunto, $mensaje, $cabeceras);
+        
+        if ($enviado) {
+          // Éxito
+        } else {
+          // Error
+        }
     }
 }

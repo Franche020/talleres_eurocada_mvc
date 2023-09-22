@@ -4,6 +4,14 @@
         <h1>Eurocada</h1>
         <h2>Automoción</h2>
     </a>
+    <div class="descripcion">
+        <ul>
+            <li>Chapa Pintura Mecánica Lunas</li>
+            <li>Trabajamos para todas las Compañías</li>
+            <li>Disponemos de coche de sustitución</li>
+        </ul>
+        </div>
+
     <nav>
         <div class="redes">
             <a class="facebook" href="https://www.facebook.com/tallereseurocada/" alt="Enlace facebook talleres eurocada torres de la alameda madrid">
@@ -21,6 +29,7 @@
                 </svg>
             </a>
         </div>
+
         <div class="navegacion__boton">
             <div class="navegacion__boton--mostrar">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e5da44" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -50,11 +59,12 @@
             <?php
             if (isset($_SESSION['admin'])) { ?>
                 <li><a href="/administracion" class="">Administracion</a></li>
-                <?php } 
+            <?php }
             if (isset($_SESSION['nombre'])) { ?>
                 <li><a href="/logout" class="">Salir</a></li>
-                <?php } ?>
-            </ul>
-        
+            <?php } ?>
+        </ul>
+
     </nav>
+
 </header>

@@ -45,8 +45,10 @@ class PaginasController
 
             $contacto = $_POST['contacto'] ?? [];
             $pieza = $_POST['pieza'] ?? [];
+            $completo = $_POST['completo'] ?? '';
             $image = [];
             $imagePath = [];
+
 
             $recaptcha = $_POST['g-recaptcha-response'];
 
@@ -68,13 +70,21 @@ class PaginasController
                 // Verificado, es humano
 
                 // Procesado y mapeado de las piezaas
+                $completoSanitizado = s($completo);
                 $piezaSanitizado = [];
                 foreach ($pieza as $key => $value) {
                     $piezaSanitizado[$key] = s($value);
                 }
-                $piezasMap = mapeo($piezaSanitizado);
+                if(isset($_POST['completo'])) {
+
+                    $piezasMap = mapeo($piezaSanitizado,true, $precio->completo);
+
+                } else {
+                    $piezasMap = mapeo($piezaSanitizado, false, $precio->completo);
+
+                }
                 // Procesado de las imagenes
-                //debuguear(phpinfo());
+                
                 if (!empty($_FILES['file1']['name']) || !empty($_FILES['file2']['name']) || !empty($_FILES['file3']['name'])) {
                     foreach ($_FILES as $uploadImg) {
                         //debuguear($uploadImg);
@@ -84,7 +94,7 @@ class PaginasController
                         }
                     }
                 }
-    
+                
                 // Enviar un correo tanto a la administracion, como al cliente
                 $email = new Email($direccionMail, $nombre, $apellido, null, $piezasMap, $telefono, $imagePath, $modoContacto);
     

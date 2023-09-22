@@ -13,7 +13,7 @@ function s($html): string
     return $s;
 }
 
-function mapeo($piezas)
+function mapeo($piezas, $completo, $precioCompleto)
 {
     $piezasMap = [];
     $mapeo = [
@@ -34,12 +34,28 @@ function mapeo($piezas)
         "porton-tras" => 'Portón Trasero',
         "faro-del-izq" => 'Faro Delantero Izquierdo',
         "faro-del-der" => 'Faro Delantero Derecho'
-
     ];
-    foreach ($piezas as $key => $value) {
-        if (isset($mapeo[$key])) {
-            $piezasMap[$key]['nombre'] = $mapeo[$key];
-            $piezasMap[$key]['precio'] = $piezas[$key];
+    $mapeoCompleto = [
+        "faro-del-izq" => 'Faro Delantero Izquierdo',
+        "faro-del-der" => 'Faro Delantero Derecho'
+    ];
+    
+    if($completo){
+        foreach ($piezas as $key => $value) {
+            if (isset($mapeoCompleto[$key])) {
+                $piezasMap[$key]['nombre'] = $mapeo[$key];
+                $piezasMap[$key]['precio'] = $piezas[$key];
+            }
+        }
+        $piezasMap['completo']['nombre'] = 'Coche Completo';
+        $piezasMap['completo']['precio'] = $precioCompleto;
+    } else {
+        
+        foreach ($piezas as $key => $value) {
+            if (isset($mapeo[$key])) {
+                $piezasMap[$key]['nombre'] = $mapeo[$key];
+                $piezasMap[$key]['precio'] = $piezas[$key];
+            }
         }
     }
     return $piezasMap;
