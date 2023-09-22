@@ -31,7 +31,10 @@ function mapeo($piezas)
         "retrovisor-der" => 'Retrovisor Derecho',
         "capo-del" => 'Capó Delantero',
         "techo" => 'Techo',
-        "porton-tras" => 'Portón Trasero'
+        "porton-tras" => 'Portón Trasero',
+        "faro-del-izq" => 'Faro Delantero Izquierdo',
+        "faro-del-der" => 'Faro Delantero Derecho'
+
     ];
     foreach ($piezas as $key => $value) {
         if (isset($mapeo[$key])) {

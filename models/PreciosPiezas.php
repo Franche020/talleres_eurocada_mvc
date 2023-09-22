@@ -20,7 +20,10 @@ class PreciosPiezas extends ActiveRecord {
         'aleta_del_izq',
         'aleta_del_der',
         'aleta_tras_izq',
-        'aleta_tras_der'
+        'aleta_tras_der',
+        'faro_del_izq',
+        'faro_del_der',
+        'completo'
     ];
 
     public $id;
@@ -39,6 +42,9 @@ class PreciosPiezas extends ActiveRecord {
     public $aleta_del_der;
     public $aleta_tras_izq;
     public $aleta_tras_der;
+    public $faro_del_izq;
+    public $faro_del_der;
+    public $completo;
     
 
     public function __construct($args= [])
@@ -59,6 +65,9 @@ class PreciosPiezas extends ActiveRecord {
         $this->aleta_del_der = $args['aleta_del_der'] ?? '';
         $this->aleta_tras_izq = $args['aleta_tras_izq'] ?? '';
         $this->aleta_tras_der = $args['aleta_tras_der'] ?? '';
+        $this->faro_del_izq = $args['faro_del_izq'] ?? '';
+        $this->faro_del_der = $args['faro_del_der'] ?? '';
+        $this->completo = $args['completo'] ?? '';
     }
     
 }

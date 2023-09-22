@@ -25,7 +25,7 @@
 </section>
 <form method="POST" enctype="multipart/form-data">
 
-    <fieldset class="partes contenedor formulario">
+    <fieldset class="partes contenedor formulario"> 
         <?php
         @include_once __DIR__ . '/../selector/form-selector.php';
         ?>
@@ -33,13 +33,14 @@
 
     <div class="contenedor precio">
         <h1><span id="precio-total"></span>€</h1>
-        <p>Precio total I.V.A. Incluido*</p>
+        <p>Precio total sin I.V.A.*</p>
         <p class="small">
-            *Debes asegurarte de que el color de tu coche no sea mate o tricapa y que tu vehiculo no tenga rasguños superiores a 5cm
+            *Debes asegurarte de que el color de tu coche no sea mate o tricapa y que tu vehiculo no tenga rasguños superiores a 5cm <br> Para golpes iguales o superiores a 5cm necesitamos que adjuntes imagenes para poder dar un presupuesto aproximado
         </p>
     </div>
     <div class="formulario contacto contenedor">
         <h3>Contacta con nosotros</h3>
+        <!-- //TODO cambiar a H2 pero en color negro -->
         <fieldset>
             <fieldset>
                 <?php
@@ -50,6 +51,6 @@
     </div>
     <div class="contenedor submit">
 
-        <input id="submit-calc" type="submit" value="Contactadme" class="boton ">
+        <input id="submit-calc" type="submit" value="Contactadme" class="boton"  disabled>
     </div>
 </form>

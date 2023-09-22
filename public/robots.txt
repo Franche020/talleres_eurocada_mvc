@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /galeria
+Allow: /ubicacion
+Disallow: /login
+Disallow: /registro
+

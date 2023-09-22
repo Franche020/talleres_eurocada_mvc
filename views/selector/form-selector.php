@@ -2,12 +2,24 @@
     <fieldset>
         <legend class="mayus"><h3>Pintar el coche entero</h3></legend>
         <div class="entrada--checkbox">
-            <label for="todas-piezas">Todo tu coche por solo <span id="todas-piezas--precio"></span></label>
-            <input id="todas-piezas" type="checkbox" name="completo" value="coche_entero">
+            <label for="todas-piezas">Todo tu coche por solo <span id="todas-piezas--precio"><?php echo $precio->completo ?>€</span></label>
+            <input id="todas-piezas" type="checkbox" name="completo" value="<?php echo $precio->completo ?>">
         </div>
     </fieldset>
     <fieldset class="grid-2">
         <legend class="mayus"><h3>Pintar partes del coche</h3></legend>
+
+        <fieldset>
+            <legend><h3>Faros:</h3></legend>
+            <div class="entrada--checkbox ">
+                <label for="pieza16" > Faro izquierdo delantero: <span><?php echo $precio->faro_del_izq ?>€</span></label>
+                <input type="checkbox" class="form--pieza__faro" id="pieza16" name="pieza[faro-del-izq]" value="<?php echo $precio->faro_del_izq ?>">
+            </div>
+            <div class="entrada--checkbox ">
+                <label for="pieza17" > Faro derecho delantero: <span><?php echo $precio->faro_del_der ?>€</span></label>
+                <input type="checkbox" class="form--pieza__faro" id="pieza17" name="pieza[faro-del-der]" value="<?php echo $precio->faro_del_der ?>">
+            </div>
+        </fieldset>
 
         <fieldset>
             <legend><h3>Puertas:</h3></legend>

@@ -31,22 +31,14 @@ class Email
 
         // create a new object
         $mail = new PHPMailer();
-        $mail->SMTPDebug = 4; 
         $mail->isSMTP();
-        $mail->SMTPOptions = array(
-            'ssl' => array(
-                'verify_peer' => false,
-                'verify_peer_name' => false,
-                'allow_self_signed' => true
-            )
-        );
         $mail->Host = $_ENV['EMAIL_HOST'];
         $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER_CUENTAS'];
-        $mail->Password = $_ENV['EMAIL_PASS_CUENTAS'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@tallereseurocada.es');
+        $mail->setFrom('cuentas@eurocada.es');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Confirma tu Cuenta';
 
@@ -70,17 +62,13 @@ class Email
         // create a new object
         $mail = new PHPMailer();
         $mail->isSMTP();
-        $mail->SMTPDebug = 3; 
-
-        $mail->SMTPAuth = true; 
-        $mail->SMTPSecure = "ssl";
-
         $mail->Host = $_ENV['EMAIL_HOST'];
+        $mail->SMTPAuth = true;
         $mail->Port = $_ENV['EMAIL_PORT'];
-        $mail->Username = $_ENV['EMAIL_USER_CUENTAS'];
-        $mail->Password = $_ENV['EMAIL_PASS_CUENTAS'];
+        $mail->Username = $_ENV['EMAIL_USER'];
+        $mail->Password = $_ENV['EMAIL_PASS'];
 
-        $mail->setFrom('cuentas@tallereseurocada.es');
+        $mail->setFrom('cuentas@devwebcamp.com');
         $mail->addAddress($this->email, $this->nombre);
         $mail->Subject = 'Reestablece tu password';
 
@@ -206,6 +194,4 @@ class Email
         $mail->Body = $contenido;
         $mail->send();
     }
-
-
 }

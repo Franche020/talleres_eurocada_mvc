@@ -6,6 +6,26 @@
     <form class="formulario" method="POST">
     <fieldset class="grid-2">
         <legend class="mayus"><p>Precios</p></legend>
+        <fieldset>
+            <label><h3>Completo</h3></label>
+            <div class="entrada">
+                <label for="todas-piezas">Coche completo:</label>
+                <input id="todas-piezas" step="0.01" type="number" name="pieza[completo]" value="<?php echo $precio->completo ?>">
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend><h3>Faros:</h3></legend>
+            <div class="entrada">
+                <label for="pieza16" > Faro izquierdo delantero:</label>
+                <input step="0.01" type="number" class="form--pieza__faro" id="pieza16" name="pieza[faro_del_izq]" value="<?php echo $precio->faro_del_izq ?>">
+            </div>
+            <div class="entrada">
+                <label for="pieza17" > Faro derecho delantero:</label>
+                <input step="0.01" type="number" class="form--pieza__faro" id="pieza17" name="pieza[faro_del_der]" value="<?php echo $precio->faro_del_der ?>">
+            </div>
+        </fieldset>
 
         <fieldset>
             <legend><h3>Puertas:</h3></legend>

@@ -27,7 +27,7 @@
                     <input type="radio" id="contacto_email" name="contacto[contacto]" value="email"required>
                     <label for="contacto_email">Email</label>
                 </div>
-                <div class="g-recaptcha" data-sitekey="6LccbzUoAAAAAO5fly3GxF-xSO8cEfecKyirozIV"></div>
+                <div class="g-recaptcha" data-sitekey="6LccbzUoAAAAAO5fly3GxF-xSO8cEfecKyirozIV" data-callback="enabledSubmit"></div>
                 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 

@@ -88,7 +88,8 @@ class AuthController {
                     $resultado =  $usuario->guardar();
 
                     // Enviar email
-                    $email = new Email($usuario->email, $usuario->nombre,$usuario->token,null,null,null,null);
+                    $email = new Email($usuario->email, $usuario->nombre, null,$usuario->token,null,null,null,null);
+
                     $email->enviarConfirmacion();
                     
 
@@ -128,7 +129,7 @@ class AuthController {
                     $usuario->guardar();
 
                     // Enviar el email
-                    $email = new Email( $usuario->email, $usuario->nombre, $usuario->token,null,null,null,null );
+                    $email = new Email( $usuario->email, $usuario->nombre, null, $usuario->token,null,null,null,null );
                     $email->enviarInstrucciones();
 
 

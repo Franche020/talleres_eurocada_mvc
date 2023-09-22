@@ -1,6 +1,6 @@
 <main class="contenedor">
 
-    <p><strong>NOMBRE EMPRESA, S.L.</strong>, responsable del sitio web, en adelante RESPONSABLE, pone a disposici&oacute;n de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&oacute;n y del Comercio Electr&oacute;nico (LSSICE), as&iacute; como informar a todos los usuarios del sitio web respecto a cu&aacute;les son las condiciones de uso.</p>
+    <p><strong>Talleres Eurocada, S.L.</strong>, responsable del sitio web, en adelante RESPONSABLE, pone a disposici&oacute;n de los usuarios el presente documento, con el que pretende dar cumplimiento a las obligaciones dispuestas en la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Informaci&oacute;n y del Comercio Electr&oacute;nico (LSSICE), as&iacute; como informar a todos los usuarios del sitio web respecto a cu&aacute;les son las condiciones de uso.</p>
 
     <p>Toda persona que acceda a este sitio web asume el papel de usuario, comprometi&eacute;ndose a la observancia y cumplimiento riguroso de las disposiciones aqu&iacute; dispuestas, as&iacute; como a cualquier otra disposici&oacute;n legal que fuera de aplicaci&oacute;n.</p>
     <p></p>
@@ -9,7 +9,7 @@
     <ol>
         <li><strong> DATOS IDENTIFICATIVOS</strong></li>
     </ol>
-    <p>Denominaci&oacute;n social:<strong>NOMBRE EMPRESA, S.L.</strong>,<br /> Nombre comercial:<strong>NOMBRE EMPRESA</strong><br /> NIF: XXXXXXX<br /> Domicilio:<strong>DIRECCION DE TU NEGOCIO</strong><br /> e-mail:<strong>XXXXX@tudominio. com</strong></p>
+    <p>Denominaci&oacute;n social:<strong>tallereseurocada, S.L.</strong>,<br /> Nombre comercial:<strong>Talleres Eurocada</strong><br /> NIF: <strong>B81304008</strong> <br /> Domicilio:<strong>Calle Londres 2/4 Torres de la alameda</strong><br /> e-mail:<strong>contacto@tallereseurocada.es</strong></p>
     <p></p>
     <ol>
         <li><strong> OBJETO</strong></li>
@@ -77,7 +77,7 @@
     <p>Para utilizar algunos de los Servicios, el Usuario debe proporcionar previamente ciertos datos de car&aacute;cter personal. La empresa tratar&aacute; automatizadamente estos datos y aplicar&aacute; las correspondientes medidas de seguridad, todo ello en cumplimiento del RGPD, LOPDGDD y LSSI. El Usuario puede acceder a la pol&iacute;tica seguida en el tratamiento de los datos personales, as&iacute; como el establecimiento de las finalidades previamente establecidas, en las condiciones definidas en la Pol&iacute;tica de Privacidad.</p>
     <p><strong>9.COOKIES</strong></p>
     <p>La empresa se reserva el derecho de utilizar la tecnolog&iacute;a &ldquo;cookie&rdquo; en el Espacio Web, a fin de reconocerlo como Usuario frecuente y personalizar el uso que realice del Espacio Web mediante la preselecci&oacute;n de su idioma, o contenidos m&aacute;s deseados o espec&iacute;ficos.</p>
-    <p>Las cookies recopilan la direcci&oacute;n<a href="https://ceporros.com/">IP</a>del usuario siendo Google el responsable del tratamiento de esta informaci&oacute;n.</p>
+    <p>Las cookies recopilan la direcci&oacute;n<a href="https://www.tallereseurocada.es/">IP</a>del usuario siendo Google el responsable del tratamiento de esta informaci&oacute;n.</p>
 
     <p>Las cookies son ficheros enviados a un navegador, por medio de un servidor Web, para registrar la navegaci&oacute;n del Usuario en el Espacio Web, cuando el Usuario permita su recepci&oacute;n. Si usted lo desea puede configurar su navegador para ser avisado en pantalla de la recepci&oacute;n de cookies y para impedir la instalaci&oacute;n de cookies en su disco duro. Por favor consulte las instrucciones y manuales de su navegador para ampliar esta informaci&oacute;n.</p>
     <p>Gracias a las cookies, resulta posible que se pueda reconocer el navegador del ordenador utilizado por el Usuario con la finalidad de facilitar contenidos y ofrecer las preferencias de navegaci&oacute;n u publicitarias que el Usuario, a los perfiles demogr&aacute;ficos de los Usuarios as&iacute; como para medir las visitas y par&aacute;metros del tr&aacute;fico, controlar el progreso y n&uacute;mero de entradas.</p>

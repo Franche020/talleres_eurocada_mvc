@@ -1,5 +1,6 @@
 const selectorPieza = document.querySelectorAll('.selector--pieza');
 const formPieza = document.querySelectorAll('.form--pieza');
+const formPiezaFaro = document.querySelectorAll('.form--pieza__faro');
 const total = document.querySelector('#precio-total');
 const todasPiezasPrecio = document.querySelector('#todas-piezas--precio');
 const todasPiezas = document.querySelector('#todas-piezas');
@@ -9,11 +10,14 @@ const file3 = document.getElementById('file3');
 const labelFile1 = document.getElementById('label-file1');
 const labelFile2 = document.getElementById('label-file2');
 const labelFile3 = document.getElementById('label-file3');
+let estadoPiezas = [];
+const submit = document.getElementById('submit-calc');
 
 
+// TODO añadir event listener para faros y que se sume al total
+// TODO verificar si los faros se marcan tambien al hacer el total
 document.addEventListener('DOMContentLoaded', function(){
     iniEstado();
-    sumarTodasPiezas();
     eventListenersServicios();
 })
 
@@ -51,6 +55,7 @@ function eventListenersServicios () {
             let ePart = document.querySelector(`input[name="pieza[${part}]"]`);
             if (ePart.checked === true) {
                 ePart.checked = false;
+                todasPiezas.checked = false;
             } else {
                 ePart.checked = true;
             }
@@ -77,6 +82,12 @@ function eventListenersServicios () {
             if (todasPiezas.checked) {
                 todasPiezas.checked = false;
             }
+            sumatorio();
+        })
+    })
+    formPiezaFaro.forEach(element => {
+        element.addEventListener('click' , (e) => {
+
             sumatorio();
         })
     })
@@ -113,24 +124,37 @@ function eventListenersServicios () {
 }
 
 function sumatorio () {
+    var todas = false;
     var precioTotal = 0;
-    
+    estadoPiezas = [];
     formPieza.forEach(element => {
+        estadoPiezas.push(element.checked);
+
+        //TODO Si todas están marcadas que se sume unicamente esa
         if (element.checked === true){
             precioTotal += Number.parseFloat(element.value);
-            //console.log(Number.parseFloat(element.value));
         }
         total.innerHTML = precioTotal.toFixed(2);
     });
+    // And sobre estado de piezas
+    todas = estadoPiezas.every(Boolean);
+
+    // Si todas estan marcadas se asigna el precio de coche completo  y se marca todas piezas en caso de que se haga una a una
+    if (todas === true) {
+        
+        precioTotal = Number.parseFloat(todasPiezas.value);
+        todasPiezas.checked = true;
+    }
+
+    formPiezaFaro.forEach(element => {
+        if (element.checked === true){
+            precioTotal += Number.parseFloat(element.value);
+        }
+        total.innerHTML = precioTotal.toFixed(2);
+    });
+
 }
 
-function sumarTodasPiezas () {
-    let precioCompleto = 0;
-    formPieza.forEach(element => {
-        precioCompleto += Number.parseFloat(element.value);
-    })
-    todasPiezasPrecio.innerHTML = precioCompleto.toFixed(2)+'€';
-}
 
 function extraeNombre (element) {
     let name = element.name;
@@ -141,4 +165,8 @@ function extraeNombre (element) {
     // El resultado se guarda en match[1]
     let result = match[1]
     return result;
+}
+
+function enabledSubmit(response) {
+    submit.disabled = false
 }
