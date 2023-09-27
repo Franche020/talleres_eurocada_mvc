@@ -10,6 +10,7 @@ use MVC\Router;
 
 class PaginasController
 {
+    //! OFF
     public static function index(Router $router){
         startSession();
         $router->render('paginas/index', []);
@@ -116,7 +117,7 @@ class PaginasController
         }
         //debuguear($precio);
         $router->render('paginas/calculadora-pintura', [
-            'titulo' => 'Calculadora de Pintura',
+            'titulo' => '',
             'precio' => $precio,
             'script' => ' <script src="/build/js/servicios.js" defer></script>'
         ]);
