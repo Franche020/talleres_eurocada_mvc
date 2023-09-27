@@ -28,8 +28,36 @@
                     <label for="contacto_email">Email</label>
                 </div>
                 <div class="g-recaptcha" data-sitekey="6LccbzUoAAAAAO5fly3GxF-xSO8cEfecKyirozIV" data-callback="enabledSubmit"></div>
-                <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+                <script>
 
+                        // Detectar scroll en ventana
+                        window.addEventListener('scroll', () => {
 
+                        // Obtener posición del div reCAPTCHA
+                        const recaptchaPosition = document.querySelector('.g-recaptcha').getBoundingClientRect().top;
+                        
+                        // Obtener posición actual de scroll
+                        const screenPosition = window.innerHeight + window.scrollY;
+
+                        // Si se llegó a la altura del reCAPTCHA
+                        if (screenPosition >= recaptchaPosition) {
+
+                            // Cargar script de reCAPTCHA
+                            loadRecaptchaScript();
+
+                        }
+                        
+                        })
+
+                        // Carga el script  
+                        function loadRecaptchaScript() {
+
+                        const script = document.createElement('script');
+                        script.src = 'https://www.google.com/recaptcha/api.js';
+                        script.async = true;
+                        script.defer = true;
+                        document.head.appendChild(script);
+                        
+                        }
+                    </script>
             </div>
-<!-- //TODO Añadir recaptcha -->

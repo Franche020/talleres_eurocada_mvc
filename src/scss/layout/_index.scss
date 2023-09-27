@@ -2,3 +2,12 @@
 @forward 'main';
 @forward 'galeria';
 @forward 'mapa';
+
+.somos{
+    max-width: 80rem;
+    p{
+        font-size: 1.6rem;
+        line-height: 2.2rem;
+        letter-spacing: 0.1rem;
+    }
+}

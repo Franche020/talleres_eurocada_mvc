@@ -1,33 +1,29 @@
 <header>
     <a href="/">
-        <h2>Talleres</h2>
-        <h1>Eurocada</h1>
-        <h2>Automoción</h2>
+        <h1><span class="h1-small">Talleres</span><span class="h1-grande">Eurocada</span><span class="h1-small">Automoción</span></h1>
     </a>
     <div class="descripcion">
-        <ul>
-            <li>Chapa Pintura Mecánica Lunas</li>
-            <li>Trabajamos para todas las Compañías</li>
-            <li>Disponemos de coche de sustitución</li>
-        </ul>
-        </div>
+            <h2>
+            <span>Chapa Pintura Mecánica Lunas</span><span>Trabajamos para todas las Compañías</span><span>Disponemos de coche de sustitución</span>
+        </h2>
+    </div>
 
     <nav>
         <div class="redes">
-            <a class="facebook" href="https://www.facebook.com/tallereseurocada/" alt="Enlace facebook talleres eurocada torres de la alameda madrid">
+            <a class="facebook" href="https://www.facebook.com/tallereseurocada/" alt="Facebook talleres eurocada taller torres de la alameda madrid">
                 <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e5da44" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                 </svg>
-            </a>
-            <a class="instagram" href="#" alt="Enlace facebook talleres eurocada torres de la alameda madrid">
-                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e5da44" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                    <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                    <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
-                    <path d="M16.5 7.5l0 .01" />
-                </svg>
-            </a>
+            </a><?php
+            // <a class="instagram" href="#" alt="Enlace facebook talleres eurocada torres de la alameda madrid">
+            //     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="48" height="48" viewBox="0 0 24 24" stroke-width="1.5" stroke="#e5da44" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            //         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            //         <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
+            //         <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            //         <path d="M16.5 7.5l0 .01" />
+            //     </svg>
+            // </a> ?>
         </div>
 
         <div class="navegacion__boton">

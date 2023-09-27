@@ -339,10 +339,6 @@ h1 {
   font-size: 5rem;
 }
 
-h2 {
-  font-size: 2.5rem;
-}
-
 h3 {
   font-size: 2rem;
   font-style: normal;
@@ -390,20 +386,22 @@ header {
   gap: 0.4rem;
 }
 
-h1,
-h2 {
+h1 {
   text-transform: uppercase;
   margin: 0;
   padding: 0;
   letter-spacing: 0.75rem;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
+.h1-grande {
   color: #e5da44;
 }
 
-h2 {
+.h1-small {
   color: #FFFFFF;
+  font-size: 2.5rem;
 }
 
 nav {
@@ -521,7 +519,7 @@ nav li:hover {
   cursor: pointer;
 }
 
-.descripcion ul {
+.descripcion h2 {
   list-style: none;
   padding: 1rem 2rem 1rem 2rem;
   border-top: 0.5px solid #7e7712;
@@ -533,12 +531,12 @@ nav li:hover {
   gap: 1rem;
 }
 @media (min-width: 1024px) {
-  .descripcion ul {
+  .descripcion h2 {
     flex-direction: row;
     gap: 3rem;
   }
 }
-.descripcion li {
+.descripcion span {
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.2rem;
@@ -774,6 +772,15 @@ input[type=file] {
   margin-top: 1rem;
 }
 
+.precio-valor {
+  font-size: 5rem;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  letter-spacing: 0.75rem;
+  color: #e5da44;
+}
+
 .admin-imagenes div {
   padding: 0.5rem;
   border: 1px solid #625959;
@@ -926,5 +933,14 @@ main p {
 }
 .mapa-responsive iframe {
   width: 100%;
+}
+
+.somos {
+  max-width: 80rem;
+}
+.somos p {
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  letter-spacing: 0.1rem;
 }
 /*# sourceMappingURL=app.css.map */
