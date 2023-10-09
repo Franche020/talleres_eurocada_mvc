@@ -6,7 +6,7 @@
     </picture>
 </section>
 <section class="contenedor somos">
-    <p>Talleres Eurocada es tu taller de confianza en Torre de la Alameda.</p> <p>Con más de 15 años de experiencia en el sector, disponemos de un equipo de profesionales altamente capacitados que se encargará de arreglar tu vehículo y dejarlo como nuevo.</p><p>Ofrecemos servicios integrales de chapa y pintura, reparación de abolladuras, pulido y abrillantado. También realizamos todo tipo de trabajos mecánicos: cambios de aceite, de pastillas de freno, correas y más Contamos con las herramientas y tecnología más avanzada del sector para garantizar la mejor calidad en cada reparación.</p> <p>Ven a nuestro taller en Torre de la Alameda y confía tu vehículo a nuestros expertos chapistas. ¡Te esperamos!</p>
+    <p>Talleres Eurocada es tu taller en Torres de la Alameda.</p> <p>Con más de 15 años de experiencia en el sector, disponemos de un equipo de profesionales altamente capacitados que se encargará de arreglar tu vehículo y dejarlo como nuevo.</p><p>Ofrecemos servicios integrales de chapa y pintura, reparación de abolladuras, pulido y abrillantado. También realizamos todo tipo de trabajos mecánicos: cambios de aceite, de pastillas de freno, correas y más Contamos con las herramientas y tecnología más avanzada del sector para garantizar la mejor calidad en cada reparación.</p> <p>Ven a nuestro taller en Torres de la Alameda y confía tu vehículo a nuestros expertos chapistas. ¡Te esperamos!</p>
 </section>
 <section class="contenedor">
     <h3>Selecciona las zonas que deseas pintar</h3>
