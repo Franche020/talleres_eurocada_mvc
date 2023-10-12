@@ -124,8 +124,8 @@ function eventListenersServicios () {
 }
 
 function sumatorio () {
-    var todas = false;
-    var precioTotal = 0;
+    let todas = false;
+    let precioTotal = 0;
     estadoPiezas = [];
     formPieza.forEach(element => {
         estadoPiezas.push(element.checked);

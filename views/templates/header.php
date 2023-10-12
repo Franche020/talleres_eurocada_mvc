@@ -2,9 +2,14 @@
     <a href="/">
         <h1><span class="h1-small">Talleres </span><span class="h1-grande">Eurocada </span><span class="h1-small">Automoción</span></h1>
     </a>
-    <div class="descripcion">
-            <h2>
-            <span>Chapa Pintura Mecánica Lunas</span><span>Trabajamos para todas las Compañías</span><span>Disponemos de coche de sustitución</span>
+    <div class="header">
+        <h2> 
+             
+            <div class="pueblo">Taller en Torres de la Alameda</div>
+            <div class="descripcion">Chapa Pintura Mecánica Lunas</div>
+            <div class="descripcion">Trabajamos para todas las Compañías</div>
+            <div class="descripcion">Disponemos de coche de sustitución</div>
+
         </h2>
     </div>
 
@@ -45,9 +50,9 @@
         </div>
 
         <ul class="navegacion__enlaces">
+            <li><a href="/" class="">Inicio</a></li>
             <li><a href="/galeria" class="">Galeria</a></li>
             <li><a href="/ubicacion" class="">Donde Estamos</a></li>
-            <li><a href="/" class="">Calculadora de Pintura</a></li>
             <?php
             if (empty($_SESSION)) {            ?>
                 <li><a href="/login" class="">Login</a></li>
