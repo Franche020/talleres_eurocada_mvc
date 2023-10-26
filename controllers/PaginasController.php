@@ -132,4 +132,15 @@ class PaginasController
 
         ]);
     }
+
+    public static function nosotros (Router $router) {
+        startSession();
+
+
+        $router->render ('paginas/nosotros' , [
+            'titulo' => 'Donde estamos',
+
+        ]);
+    }
+
 }

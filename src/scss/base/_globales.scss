@@ -21,10 +21,16 @@ img {
     height: auto;
 }
 .contenedor {
+    max-width: 80rem;
     margin: 0 auto;
     padding: 2.8rem;
     border-bottom: 1px solid v.$negro;
 }
 p {
     color: v.$negro;
+}
+
+li {
+    list-style: none;
+    line-height: 1.5;
 }

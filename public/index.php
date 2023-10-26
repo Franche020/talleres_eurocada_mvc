@@ -19,6 +19,8 @@ $router->get('/confirmacion-contacto', [PaginasController::class, 'confirmacion'
 // Ubicacion y legal
 $router->get('/aviso-legal', [PaginasController::class, 'legal']);
 $router->get('/ubicacion', [PaginasController::class, 'ubicacion']);
+$router->get('/nosotros', [PaginasController::class, 'nosotros']);
+
 
 // galeria
 $router->get('/galeria', [GaleriaController::class, 'index']);

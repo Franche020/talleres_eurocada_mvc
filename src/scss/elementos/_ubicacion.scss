@@ -1,0 +1,18 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.ubicacion--texto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    a{
+        color: v.$azul;
+
+    }
+    .ubicacion--dato{
+        text-align: right;
+        gap: 2rem;
+        display: flex;
+        justify-content: space-between;
+    }
+}

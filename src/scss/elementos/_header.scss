@@ -31,12 +31,24 @@ h1 {
 
 nav {
   display: flex;
-  width: auto;
+  width: 100%;
+  @include m.desktop{
+    width: auto;
+  }
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
 
-  @include m.tablet {
+  .botones--nav{
+    width: 100%;
+    @include m.desktop{
+      width: auto;
+    }
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include m.desktop {
     flex-direction: row;
   }
 
@@ -52,7 +64,7 @@ nav {
     flex-direction: column;
     justify-content: center;
 
-    @include m.tablet {
+    @include m.desktop {
       flex-direction: row;
       gap: 0rem;
     }
@@ -90,7 +102,10 @@ nav {
 .navegacion__boton {
   cursor: pointer;
   display: flex;
-  margin: 2rem;
+  margin: 0;
+  @include m.desktop {
+    margin: 2rem 0 2rem 0;
+  }
   justify-content: center;
 
   @include m.tablet {
@@ -129,7 +144,10 @@ nav {
 }
 
 .redes {
-  margin: 2rem 0 2rem 0;
+  margin: 0;
+  @include m.desktop {
+    margin: 2rem 0 2rem 0;
+  }
   display: flex;
   gap: 2rem;
 
