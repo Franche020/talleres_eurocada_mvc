@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-
+    <?php include_once __DIR__ . '/templates/structured-data.php'; ?>
 
     <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
     <script defer type="text/javascript" src="/build/js/cookie-consent.js" charset="UTF-8"></script>
@@ -45,7 +45,7 @@
     <meta name="copyright" content="Talleres Eurocada SL Torres de la Alameda Madrid" />
     <meta name="robots" content="index"/>
 
-    <title>Eurocada Taller Torres de la alameda Mecánica Chapa Pintura <?php echo $titulo; ?></title>
+    <title>Eurocada <?php echo $titulo; ?></title>
     <link rel="icon" type="image/jpg" href="/build/img/favicon.jpg"/>
     <link rel="stylesheet" href="/build/css/app.css">
 

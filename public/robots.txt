@@ -3,7 +3,6 @@ Sitemap: https://tallereseurocada.es/sitemap.xml
 User-Agent: *
 Allow: /galeria
 Allow: /ubicacion
-Allow: /structured-data
 Disallow: /login
 Disallow: /registro
 

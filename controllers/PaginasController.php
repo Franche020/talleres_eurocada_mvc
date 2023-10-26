@@ -117,7 +117,7 @@ class PaginasController
         }
         //debuguear($precio);
         $router->render('paginas/calculadora-pintura', [
-            'titulo' => '',
+            'titulo' => '|| Taller Torres de la alameda Mecánica Chapa Pintura',
             'precio' => $precio,
             'script' => ' <script src="/build/js/servicios.js" defer></script>'
         ]);
@@ -128,7 +128,7 @@ class PaginasController
 
 
         $router->render ('paginas/ubicacion' , [
-            'titulo' => 'Donde estamos',
+            'titulo' => 'Donde estamos en Torres de la alameda',
 
         ]);
     }
@@ -138,7 +138,7 @@ class PaginasController
 
 
         $router->render ('paginas/nosotros' , [
-            'titulo' => 'Donde estamos',
+            'titulo' => 'Nosotros',
 
         ]);
     }
