@@ -7,7 +7,7 @@
 
     <p>Ofrecemos los siguientes servicios:</p>
 
-    <ul>
+    <ul class="flex-vertical">
         <li>Mecánica general: mantenimiento, diagnóstico de averías, reparación del motor, embrague, caja de cambios, frenos, amortiguadores, dirección, etc.</li>
         <li>Chapa y pintura: reparación de abolladuras, pintado, pulido y abrillantado.</li>
         <li>Pre-ITV: revisión previa y reparación para superar la ITV.</li>

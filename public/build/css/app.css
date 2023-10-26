@@ -402,6 +402,14 @@ p, a {
   gap: 2rem;
 }
 
+.flex-vertical {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
 .margin2rem {
   margin: 2rem;
 }
