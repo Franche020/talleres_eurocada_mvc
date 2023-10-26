@@ -5,8 +5,8 @@
 
 
     <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-    <script type="text/javascript" src="/build/js/cookie-consent.js" charset="UTF-8"></script>
-    <script type="text/javascript" charset="UTF-8">
+    <script defer type="text/javascript" src="/build/js/cookie-consent.js" charset="UTF-8"></script>
+    <script defer type="text/javascript" charset="UTF-8">
         document.addEventListener('DOMContentLoaded', function() {
             cookieconsent.run({
                 "notice_banner_type": "simple",
@@ -22,8 +22,8 @@
     </script>
 
     <!-- Unnamed script -->
-    <script type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-JFP148DBM2"></script>
-    <script type="text/plain" data-cookie-consent="tracking">
+    <script defer type="text/plain" data-cookie-consent="tracking" async src="https://www.googletagmanager.com/gtag/js?id=G-JFP148DBM2"></script>
+    <script defer type="text/plain" data-cookie-consent="tracking">
         window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
