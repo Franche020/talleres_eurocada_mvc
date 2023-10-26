@@ -6,6 +6,7 @@
     "image": "https://tallereseurocada.es/build/img/hero.jpg",
     "url": "https://tallereseurocada.es/",
     "telephone": "91 885 86 35",
+    "priceRange": "€",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "C/ LONDRES Nº 2-4",
