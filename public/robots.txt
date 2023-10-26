@@ -1,8 +1,5 @@
 Sitemap: https://tallereseurocada.es/sitemap.xml
 
-# Datos estructurados
-StructuredData: https://tallereseurocada.es/structured-data.html
-
 User-Agent: *
 Allow: /galeria
 Allow: /ubicacion
