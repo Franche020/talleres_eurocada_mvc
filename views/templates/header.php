@@ -1,6 +1,6 @@
 <header>
     <a href="/">
-        <h1><span class="h1-small">Talleres </span><span class="h1-grande">Eurocada </span><span class="h1-small">Automoción</span></h1>
+        <h1><span class="h1-small">Talleres </span><span class="h1-grande">Eurocada </span></h1><p class="h1-small">Automoción</p>
     </a>
     <div class="header">
         <h2>

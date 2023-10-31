@@ -1,5 +1,6 @@
 <main class="ubicacion contenedor">
     <h3>Donde Estamos</h3>
+    <p>Estamos ubicados en la Calle Londres 2-4 de Torres de la Alameda. Nuestro amplio taller está situado en una zona de facil acceso con múltiples conexiones y fácil aparcamiento. Consulte nuestro mapa de localización o llámenos para que le informemos sobre la mejor ruta.</p>
     <adress class="ubicacion--texto">
         <p class="ubicacion--dato">Dirección: <span><a href="https://www.google.com/maps/place/Talleres+Eurocada+SL/@40.4086183,-3.3752941,15z/data=!4m6!3m5!1s0xd42462d8e4f4c3d:0x78da849c8306d533!8m2!3d40.4086183!4d-3.3752941!16s%2Fg%2F1tfr1r60?entry=ttu">C/ LONDRES Nº 2-4 Torres de la Alameda Spain</a></span></p>
         <p class="ubicacion--dato">Teléfono: <span><a href="tel:+34918858635">+34 918 85 86 35</a></span></p>

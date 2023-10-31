@@ -1,7 +1,7 @@
 <main class="contenedor">
-    <h2>El mejor taller en Torres de la Alameda</h2>
+    <h3>El mejor taller en Torres de la Alameda</h3>
 
-    <p>Torres de la Alameda cuenta con un experto taller de chapa, pintura, mecánica y electricidad para todo tipo de vehículos. Nuestro taller tiene más de 30 años de experiencia y es referente en la zona por su profesionalidad, rapidez y precios competitivos.</p>
+    <p>Torres de la Alameda cuenta con un experto taller de chapa, pintura, mecánica y electricidad para todo tipo de vehículos. Nuestro taller tiene más de 20 años de experiencia y es referente en la zona por su profesionalidad, rapidez y precios competitivos.</p>
 
     <p>Disponemos de la más moderna maquinaria para realizar cualquier reparación o mantenimiento que necesite su coche, moto, furgoneta o vehículo industrial. Nuestros experimentados chapista, pintores y mecánicos están cualificados para trabajar en cualquier marca y modelo.</p>
 

@@ -6,10 +6,12 @@
     </picture>
 </section>
 <section class="contenedor somos">
-    <p>Talleres Eurocada es tu taller en Torres de la Alameda.</p> <p>Con más de 15 años de experiencia en el sector, disponemos de un equipo de profesionales altamente capacitados que se encargará de arreglar tu vehículo y dejarlo como nuevo.</p><p>Ofrecemos servicios integrales de chapa y pintura, reparación de abolladuras, pulido y abrillantado. También realizamos todo tipo de trabajos mecánicos: cambios de aceite, de pastillas de freno, correas y más Contamos con las herramientas y tecnología más avanzada del sector para garantizar la mejor calidad en cada reparación.</p> <p>Ven a nuestro taller en Torres de la Alameda y confía tu vehículo a nuestros expertos chapistas. ¡Te esperamos!</p>
+    <p>Talleres Eurocada es tu taller en Torres de la Alameda.</p> <p>Con más de 20 años de experiencia en el sector, disponemos de un equipo de profesionales altamente capacitados que se encargará de arreglar tu vehículo y dejarlo como nuevo.</p><p>Ofrecemos servicios integrales de chapa y pintura, reparación de abolladuras, pulido y abrillantado. También realizamos todo tipo de trabajos mecánicos: cambios de aceite, de pastillas de freno, correas y más Contamos con las herramientas y tecnología más avanzada del sector para garantizar la mejor calidad en cada reparación.</p> <p>Ven a nuestro taller en Torres de la Alameda y confía tu vehículo a nuestros expertos chapistas. ¡Te esperamos!</p>
 </section>
 <section class="contenedor">
     <h3>Selecciona las zonas que deseas pintar</h3>
+    <p>A través de nuestra calculadora podrá saber al instante el coste aproximado de cualquier trabajo de pintura que necesite en su vehículo.</p>
+    <p>Indique las zonas a pintar (puertas, aletas, capó, etc), el modelo de coche y le informaremos del presupuesto. También podemos prepararle un presupuesto personalizado de forma gratuita.</p>
 </section>
 <section class="contenedor" id="calculadora">
     <div class="selector">
@@ -26,7 +28,7 @@
 
     </div>
 </section>
-<form method="POST" enctype="multipart/form-data">
+<form noindex method="POST" enctype="multipart/form-data">
 
     <fieldset class="partes contenedor formulario"> 
         <?php
