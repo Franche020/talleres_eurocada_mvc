@@ -20,11 +20,11 @@
             <div class="entrada radio">
                 <label>Tipo de contacto</label>
                 <div>
-                    <input type="radio" id="contacto_telefono" name="contacto[contacto]" value="telefono"required>
+                    <input type="radio" id="contacto_telefono" name="contacto[contacto]" value="telefono" required>
                     <label for="contacto_telefono">Teléfono</label>
                 </div>
                 <div>
-                    <input type="radio" id="contacto_email" name="contacto[contacto]" value="email"required>
+                    <input type="radio" id="contacto_email" name="contacto[contacto]" value="email" required checked>
                     <label for="contacto_email">Email</label>
                 </div>
                 <div class="g-recaptcha" data-sitekey="6LccbzUoAAAAAO5fly3GxF-xSO8cEfecKyirozIV" data-callback="enabledSubmit"></div>
