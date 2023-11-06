@@ -5,7 +5,6 @@ namespace Controllers;
 use Classes\Email;
 use Intervention\Image\ImageManagerStatic as Image;
 use Model\PreciosPiezas;
-use Model\Servicios;
 use MVC\Router;
 
 class PaginasController

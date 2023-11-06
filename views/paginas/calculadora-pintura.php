@@ -10,8 +10,6 @@
 </section>
 <section class="contenedor">
     <h3>Selecciona las zonas que deseas pintar</h3>
-    <p>A través de nuestra calculadora podrá saber al instante el coste aproximado de cualquier trabajo de pintura que necesite en su vehículo.</p>
-    <p>Indique las zonas a pintar (puertas, aletas, capó, etc), el modelo de coche y le informaremos del presupuesto. También podemos prepararle un presupuesto personalizado de forma gratuita.</p>
 </section>
 <section class="contenedor" id="calculadora">
     <div class="selector">

@@ -13,7 +13,7 @@ function s($html): string
     return $s;
 }
 
-function mapeo($piezas, $completo, $precioCompleto)
+function mapeo(array $piezas, bool $completo, $precioCompleto) :array
 {
     $piezasMap = [];
     $mapeo = [
