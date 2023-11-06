@@ -36,7 +36,7 @@ class PaginasController
     public static function calculadora(Router $router){
         startSession();
 
-
+        $alertas = [];
         $precio = PreciosPiezas::find(1);
 
 
@@ -64,52 +64,60 @@ class PaginasController
             $telefono = filter_var($contacto['telefono'],FILTER_VALIDATE_INT);
             $nombre = s($contacto['nombre']);
             $apellido = s($contacto['apellido']);   
-            $modoContacto = s($contacto['contacto']);
+            $modoContacto = s($contacto['contacto'] ?? 'email');
             
             if ($responseData->success) {// RECAPTCHA
                 // Verificado, es humano
-
-                // Procesado y mapeado de las piezaas
-                $completoSanitizado = s($completo);
-                $piezaSanitizado = [];
-                foreach ($pieza as $key => $value) {
-                    $piezaSanitizado[$key] = s($value);
-                }
-                if(isset($_POST['completo'])) {
-
-                    $piezasMap = mapeo($piezaSanitizado,true, $precio->completo);
-
-                } else {
-                    $piezasMap = mapeo($piezaSanitizado, false, $precio->completo);
-
-                }
-                // Procesado de las imagenes
                 
-                if (!empty($_FILES['file1']['name']) || !empty($_FILES['file2']['name']) || !empty($_FILES['file3']['name'])) {
-                    foreach ($_FILES as $uploadImg) {
-                        //debuguear($uploadImg);
-                        if (!empty($uploadImg['tmp_name'])){
-                            $image[] = Image::make($uploadImg['tmp_name'])->encode('jpg', 70)->save(__DIR__ . '/../tmp/' . $uploadImg['name']);
-                            $imagePath[] = __DIR__ . '/../tmp/' . $uploadImg['name'];
+                //Validacion del form
+                $validacion = new ValidacionContactoController($_POST['contacto']);
+                $alertas = $validacion->validacion();
+
+                if(empty($alertas)){
+                    // Procesado y mapeado de las piezaas
+                    $completoSanitizado = s($completo);
+                    $piezaSanitizado = [];
+                    foreach ($pieza as $key => $value) {
+                        $piezaSanitizado[$key] = s($value);
+                    }
+                    if(isset($_POST['completo'])) {
+    
+                        $piezasMap = mapeo($piezaSanitizado,true, $precio->completo);
+    
+                    } else {
+                        $piezasMap = mapeo($piezaSanitizado, false, $precio->completo);
+    
+                    }
+                    // Procesado de las imagenes
+                    
+                    if (!empty($_FILES['file1']['name']) || !empty($_FILES['file2']['name']) || !empty($_FILES['file3']['name'])) {
+                        foreach ($_FILES as $uploadImg) {
+                            //debuguear($uploadImg);
+                            if (!empty($uploadImg['tmp_name'])){
+                                $image[] = Image::make($uploadImg['tmp_name'])->encode('jpg', 70)->save(__DIR__ . '/../tmp/' . $uploadImg['name']);
+                                $imagePath[] = __DIR__ . '/../tmp/' . $uploadImg['name'];
+                            }
                         }
                     }
+                    
+                    // Enviar un correo tanto a la administracion, como al cliente
+                    $email = new Email($direccionMail, $nombre, $apellido, null, $piezasMap, $telefono, $imagePath, $modoContacto);
+        
+                    $email->emailContacto();
+         
+                    // Borrar las imagenes
+        
+                    foreach ($imagePath as $imagenBorrar) {
+                        unlink($imagenBorrar);
+                    }
+        
+                    header('location: /confirmacion-contacto');
+                    } else {
+                    // No verificado, posible bot
+                    }
+
                 }
-                
-                // Enviar un correo tanto a la administracion, como al cliente
-                $email = new Email($direccionMail, $nombre, $apellido, null, $piezasMap, $telefono, $imagePath, $modoContacto);
-    
-                $email->emailContacto();
-     
-                // Borrar las imagenes
-    
-                foreach ($imagePath as $imagenBorrar) {
-                    unlink($imagenBorrar);
-                }
-    
-                header('location: /confirmacion-contacto');
-                } else {
-                // No verificado, posible bot
-                }
+
 
 
 
@@ -118,6 +126,7 @@ class PaginasController
         $router->render('paginas/calculadora-pintura', [
             'titulo' => '|| Taller Torres de la alameda Mecánica Chapa Pintura',
             'precio' => $precio,
+            'alertas' => $alertas,
             'script' => ' <script src="/build/js/servicios.js" defer></script>'
         ]);
     }

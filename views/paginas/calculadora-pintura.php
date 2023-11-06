@@ -26,7 +26,7 @@
 
     </div>
 </section>
-<form noindex method="POST" enctype="multipart/form-data">
+<form method="POST" enctype="multipart/form-data">
 
     <fieldset class="partes contenedor formulario"> 
         <?php
@@ -47,6 +47,7 @@
         <fieldset>
             <fieldset>
                 <?php
+                @include_once __DIR__ .'/../templates/alertas.php';
                 @include_once __DIR__ . '/../contacto/form-contacto.php';
                 @include_once __DIR__ . '/../contacto/imagenes-contacto.php';
                 ?>
