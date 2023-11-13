@@ -51,6 +51,10 @@
                 @include_once __DIR__ . '/../contacto/form-contacto.php';
                 @include_once __DIR__ . '/../contacto/imagenes-contacto.php';
                 ?>
+                <div>
+                    <input type="checkbox" name="contacto[acepto]" id="acepto" required>
+                    <label for="acepto">He leído y acepto la <a href="/aviso-legal">politica de privacidad</a></label>
+                </div>
             </fieldset>
     </div>
     <div class="contenedor submit">
