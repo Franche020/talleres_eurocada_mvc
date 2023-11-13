@@ -9,6 +9,7 @@ class ValidacionContactoController
     public $email;
     public $telefono;
     public $contacto;
+    public $acepto;
 
     public $alertas =[];
 
@@ -19,6 +20,7 @@ class ValidacionContactoController
         $this->email = $args['email'] ?? '';
         $this->telefono = $args['telefono'] ?? '';
         $this->contacto = $args['contacto'] ?? 'email';
+        $this->acepto = $args['acepto'] ?? false;
     }
 
     public function validacion (): array
@@ -37,6 +39,9 @@ class ValidacionContactoController
         }
         if(!filter_var($this->email, FILTER_VALIDATE_EMAIL)) {
             $this->alertas['error'][] = 'Email no válido';
+        }
+        if(!$this->acepto){
+            $this->alertas['error'][] = 'Ha de aceptar nuestra politica de privacidad';            
         }
         return $this->alertas;
     }
